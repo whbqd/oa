@@ -9,9 +9,7 @@
     <div class="cen">
       <div class="cenBox">
         <p class="cenFont">
-          欢迎使用后台管理系统（V1.2）你本次的登录时间为<span>2021年03月19日14.35</span>，登录IP<span
-            >192.168.12.11</span
-          >
+          <bao :lists="lists"></bao>
         </p>
         <i class="el-icon-close tuic"></i>
       </div>
@@ -28,18 +26,38 @@
         <img src="../assets/设置.png" class="setPic" />
         <p class="depaFont">设置</p>
       </div>
-      <div class="touxFont">
-        <img src="../assets/退出.png" class="setPic" />
-        <p class="depaFont">退出</p>
-      </div>
+      <el-button type="text" @click="open">
+        <div class="touxFont">
+          <img src="../assets/退出.png" class="setPic" />
+          <p class="depaFont">退出</p>
+        </div></el-button
+      >
     </div>
   </div>
 </template>
 <script>
+import bao from "../components/bao.vue";
 export default {
   name: "zhtop",
   data() {
-    return {};
+    return {
+      lists: [
+        " 欢迎使用后台管理系统（V1.2）你本次的登录时间为2021年03月19日14.35登录IP192.168.12.11",
+      ],
+    };
+  },
+  components: { bao },
+  methods: {
+    // 退出
+    open() {
+      this.$confirm("即将退出当前账号，确定是否退出", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
+      }).then(() => {
+        this.$router.push("/");
+      });
+    },
   },
 };
 </script>
@@ -64,7 +82,7 @@ export default {
       height: 60px;
     }
     .yidongFont {
-      font-size: 26px;
+      font-size: 22px;
       margin-left: 20px;
       min-width: 220px;
     }
@@ -79,13 +97,13 @@ export default {
       position: relative;
       margin: auto;
       margin-right: 40px;
-      height: 43px;
-      line-height: 43px;
+      height: 35px;
+      line-height: 35px;
       background: #f6ffed;
-      min-width: 680px;
-
+      padding-right: 40px;
+      border: 1px solid #7cac1c;
       .cenFont {
-        font-size: 14px;
+        font-size: 12px;
         color: #8dc21f;
         margin-left: 30px;
       }
@@ -119,11 +137,12 @@ export default {
       text-align: center;
       margin-left: 10px;
       .nameFont {
-        font-size: 16px;
+        font-size: 14px;
         min-width: 50px;
+        line-height: 28px;
       }
       .depaFont {
-        font-size: 14px;
+        font-size: 13px;
         color: #808080;
         margin-top: 6px;
         min-width: 60px;
@@ -133,7 +152,7 @@ export default {
         height: 25px;
       }
       .bottonFont {
-        margin-top: 15px;
+        margin-top: 5px;
       }
     }
   }

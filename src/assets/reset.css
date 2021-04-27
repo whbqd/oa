@@ -67,17 +67,14 @@ input::-webkit-input-placeholder {
 }
 
 input::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
     color: #cccccc;
 }
 
 input:-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
     color: #cccccc;
 }
 
 input:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
     color: #cccccc;
 }
 button {

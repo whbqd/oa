@@ -121,18 +121,28 @@ export default {
   methods: {
     logon() {
       //判断输入的手机号是否合法
-      if (!this.phone) {
-        this.$message("手机号码不能为空");
-        // return false
-      } else if (!/^1[345678]\d{9}$/.test(this.phone)) {
-        this.$message("请输入正确的手机号");
-        // return false
-      } else {
-        this.$message("请输入验证码");
-      }
+      // if (!this.phone) {
+      //   this.$message("手机号码不能为空");
+      //   // return false
+      // } else if (!/^1[345678]\d{9}$/.test(this.phone)) {
+      //   this.$message("请输入正确的手机号");
+      //   // return false
+      // } else {
+      //   this.$message("请输入验证码");
+      // }
+      this.$router.push("/homepage");
     },
     //验证码登录
     yanz() {
+      this.$axiox
+        .post("192.168.10.123:8089/verification?", { phone: "15539647671" })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((res) => {
+          console.log(res);
+        });
+
       if (this.tin) {
         let time = 60;
         let timer = setInterval(() => {

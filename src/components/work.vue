@@ -7,12 +7,45 @@
         <div class="leftPanelTop">
           <p class="leftPanelFont">任务面板</p>
           <div class="leftPanelBottom">
-            <div class="leftBox" v-for="(item, index) in one" :key="index">
+            <div class="leftBox">
               <div class="run col1">
-                <span class="iconfont icon" :class="item.icon"></span>
+                <span class="iconfont icon icon-gonggao"></span>
               </div>
-              <p class="fontName">{{ item.name }}</p>
-              <p class="fontNes">{{ item.nes }}</p>
+              <p class="fontName">通知公告</p>
+              <p class="fontNes">查阅未读公告</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col1">
+                <span
+                  class="iconfont icon icon-daiban"
+                  style="margin-left: 5px; font-size: 44px; line-height: 75px"
+                ></span>
+              </div>
+              <p class="fontName">员工入职</p>
+              <p class="fontNes">处理待办事项</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col1">
+                <span class="iconfont icon icon-shenpi"></span>
+              </div>
+              <p class="fontName">审批流转</p>
+              <p class="fontNes">处理待办事项</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col1">
+                <span class="iconfont icon icon-tongzhi1"></span>
+              </div>
+              <p class="fontName">发通知</p>
+              <p class="fontNes">发送重要信息</p>
               <div class="remind">
                 <p class="fontRemind">10</p>
               </div>
@@ -25,12 +58,42 @@
         <div class="leftPanelTop">
           <p class="leftPanelFont">人事管理</p>
           <div class="leftPanelBottom">
-            <div class="leftBox" v-for="(item, index) in two" :key="index">
+            <div class="leftBox">
               <div class="run col2">
-                <span class="iconfont icon" :class="item.icon"></span>
+                <span class="iconfont icon icon-kaoqindaka"></span>
               </div>
-              <p class="fontName">{{ item.name }}</p>
-              <p class="fontNes">{{ item.nes }}</p>
+              <p class="fontName">考勤打卡</p>
+              <p class="fontNes">考勤打卡操作</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col2">
+                <span class="iconfont icon icon-yuangongruzhi"></span>
+              </div>
+              <p class="fontName">员工入职</p>
+              <p class="fontNes">员工入职审核</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col2">
+                <span class="iconfont icon icon-yuangonglizhi"></span>
+              </div>
+              <p class="fontName">员工离职</p>
+              <p class="fontNes">员工离职审批</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col2">
+                <span class="iconfont icon icon-zhengshu"></span>
+              </div>
+              <p class="fontName">证书</p>
+              <p class="fontNes">电工证登高证</p>
               <div class="remind">
                 <p class="fontRemind">10</p>
               </div>
@@ -43,16 +106,46 @@
         <div class="leftPanelTop">
           <p class="leftPanelFont">现场管理</p>
           <div class="leftPanelBottom">
-            <div class="leftBox" v-for="(item, index) in three" :key="index">
+            <div class="leftBox">
               <div class="run col3">
-                <span class="iconfont icon" :class="item.icon"></span>
+                <span
+                  class="iconfont icon icon-zhijiandan"
+                  style="font-size: 35px"
+                ></span>
               </div>
-              <p class="fontName">{{ item.name }}</p>
-              <p class="fontNes">{{ item.nes }}</p>
+              <p class="fontName">装维质检</p>
+              <p class="fontNes">督检装维质量</p>
               <div class="remind">
                 <p class="fontRemind">10</p>
               </div>
             </div>
+            <div class="leftBox">
+              <div class="run col3">
+                <span
+                  class="iconfont icon icon-zhenggaicuoshi"
+                  style="font-size: 35px"
+                ></span>
+              </div>
+              <p class="fontName">光功率整改</p>
+              <p class="fontNes">光功率工单整改</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col3">
+                <span
+                  class="iconfont icon icon-jidinghe"
+                  style="font-size: 52px"
+                ></span>
+              </div>
+              <p class="fontName">机顶盒整改</p>
+              <p class="fontNes">机顶盒工单整改</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox"></div>
           </div>
         </div>
       </div>
@@ -61,12 +154,42 @@
         <div class="leftPanelTop">
           <p class="leftPanelFont">外包业务</p>
           <div class="leftPanelBottom">
-            <div class="leftBox" v-for="(item, index) in four" :key="index">
+            <div class="leftBox">
               <div class="run col4">
-                <span class="iconfont icon" :class="item.icon"></span>
+                <span class="iconfont icon icon-zizhi"></span>
               </div>
-              <p class="fontName">{{ item.name }}</p>
-              <p class="fontNes">{{ item.nes }}</p>
+              <p class="fontName">资质申报</p>
+              <p class="fontNes">外包资质申报</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col4">
+                <span class="iconfont icon icon-business"></span>
+              </div>
+              <p class="fontName">业务申请</p>
+              <p class="fontNes">发起业务申请</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col4">
+                <span class="iconfont icon icon-hetongguanli"></span>
+              </div>
+              <p class="fontName">合同管理</p>
+              <p class="fontNes">合同签订存档</p>
+              <div class="remind">
+                <p class="fontRemind">10</p>
+              </div>
+            </div>
+            <div class="leftBox">
+              <div class="run col4">
+                <span class="iconfont icon icon-schedule"></span>
+              </div>
+              <p class="fontName">施工进度</p>
+              <p class="fontNes">施工进度管理</p>
               <div class="remind">
                 <p class="fontRemind">10</p>
               </div>
@@ -79,12 +202,12 @@
     <div class="ringht">
       <div class="ringhtTop">
         <div class="ringhtHead">
-          <p class="ringhtHeadFont">代办事项</p>
+          <p class="ringhtHeadFont">待办事项</p>
         </div>
         <div class="bottomBox">
           <p class="matter" v-for="(item, index) in matter" :key="index">
-            代办事项<span>{{ index + 1 }}</span
-            ><span class="iconfont icon-qianwang jian"></span>
+            待办事项{{ index + 1
+            }}<span class="iconfont icon-qianwang jian"></span>
           </p>
         </div>
       </div>
@@ -106,18 +229,6 @@
 export default {
   data() {
     return {
-      one: [
-        { name: "通知公告", nes: "查阅未读公告", icon: "icon-gonggao" },
-        { name: "我的代办", nes: "处理代办事项", icon: "icon-renwujindu" },
-        { name: "审批流转", nes: "处理代办事项", icon: "icon-shenpi" },
-        { name: "发通知", nes: "发送重要信息", icon: "icon-tongzhi1" },
-      ],
-      two: [
-        { name: "考勤打卡", nes: "考勤打卡操作", icon: "icon-kaoqindaka" },
-        { name: "员工入职", nes: "员工入职审核", icon: "icon-yuangongruzhi" },
-        { name: "员工离职", nes: "员工离职审批", icon: "icon-yuangonglizhi" },
-        { name: "证书", nes: "电工证登高证", icon: "icon-zhengshu" },
-      ],
       three: [
         { name: "装维质检", nes: "督检装维质量", icon: "icon-zhijiandan" },
         {
@@ -127,21 +238,31 @@ export default {
         },
         { name: "机顶盒整改", nes: "机顶盒工单整改", icon: "icon-jidinghe" },
       ],
-      four: [
-        { name: "资质申报", nes: "外包资质申报", icon: "icon-zizhi" },
-        { name: "业务申请", nes: "发起业务申请", icon: "icon-yewushenqing" },
-        { name: "合同管理", nes: "合同签订存档", icon: "icon-hetongguanli" },
-        { name: "施工进度", nes: "施工进度管理", icon: "icon-schedule" },
-      ],
       matter: 8,
       notice: 7,
     };
   },
+  methods: {
+    aa(item) {
+      console.log(item.name);
+      if (item.name == "通知公告") {
+        this.$router.push("/homepage/notice");
+      }
+      if (item.name == "我的待办") {
+        this.$router.push("/homepage/myAgent");
+      }
+      if (item.name == "审批流转") {
+        this.$router.push("/homepage/approval");
+      }
+    },
+  },
 };
 </script>
 <style scoped lang="less">
-@import url(//at.alicdn.com/t/font_2435137_37m73simzbd.css);
-
+// @import url(//at.alicdn.com/t/font_2435137_37m73simzbd.css);
+.ying {
+  margin-left: 10px !important;
+}
 .work {
   display: flex;
   display: -webkit-flex;
@@ -149,12 +270,11 @@ export default {
   .left {
     flex: 4;
     height: 590px;
-    margin-right: 40px;
+    margin-right: 20px;
     //横条
     .leftPanel {
       width: 100%;
       height: 132px;
-      // background: #1244a0;
       // 标题
       .leftPanelTop {
         height: 35px;
@@ -164,26 +284,29 @@ export default {
       .leftPanelFont {
         padding: 8px;
         padding-left: 20px;
-        font-size: 18px;
+        font-size: 15px;
       }
       .leftPanelBottom {
         display: flex;
+        justify-content: space-around;
         background: rgb(255, 255, 255);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
         .leftBox {
           width: 200px;
           height: 98px;
           // background: #12a041;
           position: relative;
-          margin-left: 40px;
+          // margin-left: 40px;
           .run {
-            width: 74px;
-            height: 74px;
+            width: 68px;
+            height: 68px;
             border-radius: 50%;
             position: relative;
             top: 12px;
             text-align: center;
+            margin-top: 5px;
             .icon {
-              line-height: 74px;
+              line-height: 68px;
               color: #ffffff;
               font-size: 40px;
             }
@@ -201,15 +324,15 @@ export default {
             background: #7a1fa2;
           }
           .fontName {
-            font-size: 16px;
+            font-size: 13px;
             position: relative;
-            top: -45px;
+            top: -35px;
             left: 85px;
           }
           .fontNes {
             font-size: 12px;
             position: relative;
-            top: -35px;
+            top: -25px;
             left: 85px;
             color: #999999;
           }
@@ -226,7 +349,7 @@ export default {
             border-radius: 50px;
             position: absolute;
             top: 20px;
-            right: 0px;
+            right: 15px;
           }
         }
       }
@@ -243,12 +366,14 @@ export default {
       height: 285px;
       min-width: 300px;
       background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     }
     .ringhtbottom {
       margin-top: 20px;
       height: 285px;
       min-width: 300px;
       background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     }
     .ringhtHead {
       height: 50px;
@@ -256,7 +381,7 @@ export default {
     }
     .ringhtHeadFont {
       color: #ffffff;
-      font-size: 18px;
+      font-size: 15px;
       line-height: 50px;
       margin-left: 30px;
     }
@@ -266,13 +391,15 @@ export default {
     }
     .bottomBox::-webkit-scrollbar {
       /*滚动条整体样式*/
-      width: 8px; /*高宽分别对应横竖滚动条的尺寸*/
+      width: 13px; /*高宽分别对应横竖滚动条的尺寸*/
       height: 1px;
+      margin-left: 10px;
       scrollbar-arrow-color: red;
     }
     .bottomBox::-webkit-scrollbar-thumb {
       /*滚动条里面小方块*/
-      border-radius: 5px;
+      border-radius: 8px;
+      border: 3px solid #fff;
       // -webkit-box-shadow: inset 0 0 5px #0077f1;
       background: #0077f1;
       scrollbar-arrow-color: red;
@@ -283,11 +410,13 @@ export default {
       background: none;
     }
     .matter {
-      font-size: 16px;
+      font-size: 13px;
       margin-left: 30px;
       margin-top: 20px;
+      position: relative;
       .jian {
-        margin-left: 220px;
+        position: absolute;
+        right: 10px;
         color: #0077f1;
         font-size: 23px;
         font: bold;

@@ -1,55 +1,106 @@
 <template>
-  <div>
-    <zhtop></zhtop>
-    <div class="bottom">
-      <left class="left" :logo="it"></left>
-      <choice :ios="res" class="right bottom"></choice>
-      <div class="right">
-        <router-view />
-      </div>
+  <div class="app">
+    <!-- 顶部 -->
+    <zhtop class="top"></zhtop>
+    <!-- 左侧选择 -->
+    <div class="left" :class="{ weiYi: dongtai }">
+      <left></left>
+    </div>
+
+    <!-- 路由 -->
+    <div class="right" :class="{ weiYi2: dongtai }">
+      <router-view />
     </div>
   </div>
 </template>
 <script>
 import zhtop from "../components/zhtop.vue";
 import left from "../components/left.vue";
-import choice from "../components/choice.vue";
 export default {
   data() {
     return {
-      it: [
-        { id: "0", name: "工作台", icon: "icon-gongzuotai" },
-        { id: "1", name: "代办", icon: "icon-renwujindu" },
-        { id: "2", name: "通告", icon: "icon-tongzhi" },
-        { id: "3", name: "文库", icon: "icon-wenku" },
-        { id: "4", name: "通讯录", icon: "icon-icon_lianxiren" },
-      ],
-      res: [
-        { name: "工作台", url: "/homepage/work" },
-        { name: "审批流转", url: "/homepage/approval" },
-        { name: "新建流程", url: "/homepage/approval" },
-        { name: "流程进度", url: "/homepage/approval" },
-        { name: "流程审批", url: "/homepage/approval" },
-      ],
+      screenWidth: document.body.clientWidth,
+      screenHeight: document.body.clientHeight,
+      dongtai: false,
     };
   },
-  components: { zhtop, left, choice },
+  created() {
+    // console.log("11", this.screenWidth);
+    // console.log("11", this.screenHeight);
+    if (this.screenWidth < 1350) {
+      this.dongtai = true;
+    } else {
+      this.dongtai = false;
+    }
+  },
+  mounted() {
+    let width = this;
+    window.addEventListener("resize", function () {
+      return (() => {
+        window.screenWidth = document.body.clientWidth;
+        width.screenWidth = window.screenWidth;
+      })();
+    });
+  },
+  watch: {
+    screenWidth: {
+      handler(newVal) {
+        // 为了避免频繁触发resize函数导致页面卡顿，使用定时器
+        if (!this.timer) {
+          // 一旦监听到的screenWidth值改变，就将其重新赋给data里的screenWidth
+          this.screenWidth = newVal;
+          this.timer = true;
+          let width = this;
+          setTimeout(function () {
+            // 打印screenWidth变化的值
+            // console.log("1", width.screenWidth);
+            width.timer = false;
+          }, 400);
+          if (width.screenWidth < 1350) {
+            this.dongtai = true;
+          } else {
+            this.dongtai = false;
+          }
+        }
+      },
+      immediate: true,
+    },
+  },
+  components: { zhtop, left },
 };
 </script>
 <style scoped lang="less">
+.app {
+  padding-bottom: 20px;
+}
+.top {
+  width: 100%;
+  min-width: 1150px;
+}
 .left {
-  float: left;
-  margin: 50px;
+  // float: left;
+  width: 98%;
+  position: absolute;
+  min-width: 1150px;
+}
+.weiYi {
+  margin-left: -15px;
+  transition: 0.5s;
+}
+.weiYi2 {
+  position: relative;
+  left: 130px !important;
+  transition: 0.5s;
 }
 .right {
-  width: 86%;
-  margin-left: 170px;
-  min-width: 1400px;
-  .jian {
-    margin-bottom: 25px;
-  }
+  transition: 0.5s;
+  width: 88%;
+  min-width: 1000px;
+  margin-top: 70px;
+  position: relative;
+  left: 160px;
+  z-index: 99;
+  height: 590px;
+  // overflow: hidden;
 }
-  .bottom{
-    margin-bottom: 25px;
-  }
 </style>

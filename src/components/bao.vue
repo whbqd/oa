@@ -29,6 +29,7 @@ export default {
         if (-distance >= width) {
           distance = 16;
         }
+        // console.log("13",this.$refs.box.style.transform )
         this.$refs.box.style.transform = "translateX(" + distance + "px)";
       }, 20);
     },
@@ -40,9 +41,9 @@ export default {
     }
   },
   // 更新的时候运动
-  updated: function () {
-    this.move();
-  },
+  // updated: function () {
+  //   this.move();
+  // },
 };
 </script>
 <style scoped>

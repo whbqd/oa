@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+屏幕录制*
 
 
 # local env files
